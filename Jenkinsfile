@@ -33,10 +33,13 @@ pipeline {
             steps {
                 sh '''
                 # Wait for container to be fully up
-                sleep 5
+                sleep 15
                 # Test if the webapp is responding 
                 curl localhost:80 || echo "Website not responding"
                 '''
+                if (result!=0) {
+                    error "Website connectivity test failed"
+                }
             }
         }
     }
