@@ -24,7 +24,7 @@ pipeline {
         stage('Run Container') {
             steps {
                 sh '''
-                docker run -d -p 80:80 --name webapp-container webapp-image
+                docker run -d -p 80:5500 --name webapp-container webapp-image
                 '''
             }
         }
