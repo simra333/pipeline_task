@@ -16,7 +16,7 @@ pipeline {
             steps {
                 sh ''' 
                 cd Task1
-                docker build -t webapp-image .
+                docker build -t webapp-image --build-arg AUTHOR="Simra" .
                 '''
             }
         }
